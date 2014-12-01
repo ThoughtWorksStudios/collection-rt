@@ -1,7 +1,7 @@
 {
-  "name": "rtstream",
+  "name": "collection-rt",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "Collection sync cross client in realtime",
   "dependencies": {
     "express": "^4.10.2",
     "jade": "^1.8.1",
