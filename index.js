@@ -25,7 +25,7 @@ function bindSocket(nsp) {
       var val = cmdGetValue(cmd);
       console.log(key, val)
       redis.rpush(key, val);
-      io.emit('add ' + key, val);
+      io.of(nsp).emit('add ' + key, val);
     });
 
     socket.on('list', function(cmd){
@@ -50,9 +50,6 @@ redis.lrange("_namespaces_", 0, -1, function(err, data) {
   if(err) return console.log(err);
   data.forEach(bindSocket);
 })
-
-bindSocket('');
-
 
 app.get('/', function(req, res){
   res.render('index');
