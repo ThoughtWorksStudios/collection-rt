@@ -25,7 +25,7 @@
     </script>
 
     <script>
-      var socket = io("/acme");
+      var socket = io("/default");
       $('form').submit(function(event){
         event.preventDefault();
         socket.emit('add', ['messages', $('#m').val()]);
